@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calculator"></i> Calculadora Científica</h1>
+            <div class="mode-toggle">
+                <span class="mode-label">Modo Científico</span>
+                <label class="switch">
+                    <input type="checkbox" id="scientificModeToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </header>
+
+        <div class="calculator">
+            <!-- Pantalla de la calculadora -->
+            <div class="display">
+                <div class="expression" id="expression">0</div>
+                <div class="result" id="result">0</div>
+            </div>
+
+            <!-- Teclado de la calculadora -->
+            <div class="keypad">
+                <div class="row">
+                    <button class="btn scientific" data-action="sin">sin</button>
+                    <button class="btn scientific" data-action="cos">cos</button>
+                    <button class="btn scientific" data-action="tan">tan</button>
+                    <button class="btn operator" data-action="clear">C</button>
+                    <button class="btn operator" data-action="backspace"><i class="fas fa-backspace"></i></button>
+                </div>
+                
+                <div class="row">
+                    <button class="btn scientific" data-action="log">log</button>
+                    <button class="btn scientific" data-action="ln">ln</button>
+                    <button class="btn scientific" data-action="sqrt">√</button>
+                    <button class="btn operator" data-action="power">x<sup>y</sup></button>
+                    <button class="btn operator" data-action="divide">÷</button>
+                </div>
+                
+                <div class="row">
+                    <button class="btn number" data-value="7">7</button>
+                    <button class="btn number" data-value="8">8</button>
+                    <button class="btn number" data-value="9">9</button>
+                    <button class="btn operator" data-action="multiply">×</button>
+                    <button class="btn scientific" data-action="pi">π</button>
+                </div>
+                
+                <div class="row">
+                    <button class="btn number" data-value="4">4</button>
+                    <button class="btn number" data-value="5">5</button>
+                    <button class="btn number" data-value="6">6</button>
+                    <button class="btn operator" data-action="subtract">-</button>
+                    <button class="btn scientific" data-action="e">e</button>
+                </div>
+                
+                <div class="row">
+                    <button class="btn number" data-value="1">1</button>
+                    <button class="btn number" data-value="2">2</button>
+                    <button class="btn number" data-value="3">3</button>
+                    <button class="btn operator" data-action="add">+</button>
+                    <button class="btn scientific" data-action="factorial">x!</button>
+                </div>
+                
+                <div class="row">
+                    <button class="btn number" data-value="0">0</button>
+                    <button class="btn" data-action="decimal">.</button>
+                    <button class="btn" data-action="toggleSign">±</button>
+                    <button class="btn equals" data-action="equals">=</button>
+                    <button class="btn operator" data-action="openParenthesis">(</button>
+                </div>
+                
+                <div class="row scientific-row">
+                    <button class="btn scientific" data-action="asin">sin<sup>-1</sup></button>
+                    <button class="btn scientific" data-action="acos">cos<sup>-1</sup></button>
+                    <button class="btn scientific" data-action="atan">tan<sup>-1</sup></button>
+                    <button class="btn scientific" data-action="power10">10<sup>x</sup></button>
+                    <button class="btn operator" data-action="closeParenthesis">)</button>
+                </div>
+            </div>
+            
+            <!-- Historial de cálculos -->
+            <div class="history">
+                <h3><i class="fas fa-history"></i> Historial</h3>
+                <div class="history-list" id="historyList">
+                    <!-- Los cálculos anteriores aparecerán aquí -->
+                </div>
+                <button class="btn-clear-history" id="clearHistory">Limpiar Historial</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Calculadora científica con funciones trigonométricas, logarítmicas y más.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
